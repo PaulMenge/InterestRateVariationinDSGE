@@ -6,10 +6,8 @@
 clear; clc;
 
 % ---- Paths ----
-%workdir = 'C:\Users\paulm\Dropbox\Revision Project Yuriy\Code\Matlab'; cd(workdir);
-%addpath('C:/Users/paulm/Desktop/software/Dynare/5.5/matlab'); dynare_config;
-workdir = 'C:\Users\yuriy\Dropbox\Revision Project Yuriy\Code\Matlab'; cd(workdir);
-addpath('C:\dynare\6.4\matlab'); dynare_config;
+workdir = '...'; cd(workdir);
+addpath('...Dynare/5.5/matlab'); dynare_config;
 
 % ---- Plots dir + save options ----
 plots_dir     = fullfile(workdir,'Plots'); if ~exist(plots_dir,'dir'), mkdir(plots_dir); end
@@ -23,7 +21,7 @@ sig_eta_vecA = [0 0.05 0.10 0.20 0.50 1.00 1.50];       % Iso-A: ση (Y)
 phi_pi_grid  = [1.25 1.50 1.75 2.00 2.25 2.50];         % Policy-C: φπ (X)
 sig_cb_vecC  = [0 0.05 0.10 0.20 0.50 1.00];            % Policy-C: σν^CB (Y)
 
-% Welfare weights (π and x fixed at 1.0 per Yuriy paper; wr varies across runs)
+% Welfare weights (π and x fixed at 1.0; wr varies across runs)
 WELFARE_MODE   = 'adhoc'; omega_pi_adhoc = 1.0; omega_x_adhoc = 1.0;
 RELATIVE_MODE  = 'pct';   K_CE = 1.0;
 
@@ -228,3 +226,4 @@ function save_plot(fig, plots_dir, base_name, SAVE_FORMATS, SAVE_OVERWRITE, SAVE
         end
     end
 end
+
